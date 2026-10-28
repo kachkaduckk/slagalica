@@ -6,85 +6,84 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.slagalica.SlagalicaController">
    <children>
-      <Button fx:id="bt1" layoutX="59.0" layoutY="50.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="1">
+      <Button fx:id="bt0" layoutX="59.0" layoutY="50.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="1">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt2" layoutX="111.0" layoutY="50.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="2">
+      <Button fx:id="bt1" layoutX="111.0" layoutY="50.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="2">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt3" layoutX="163.0" layoutY="50.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="3">
+      <Button fx:id="bt2" layoutX="163.0" layoutY="50.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="3">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt4" layoutX="215.0" layoutY="50.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="4">
+      <Button fx:id="bt3" layoutX="215.0" layoutY="50.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="4">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt5" layoutX="59.0" layoutY="102.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="5">
+      <Button fx:id="bt4" layoutX="59.0" layoutY="102.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="5">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt6" layoutX="111.0" layoutY="102.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="6">
+      <Button fx:id="bt5" layoutX="111.0" layoutY="102.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="6">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt7" layoutX="163.0" layoutY="102.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="7">
+      <Button fx:id="bt6" layoutX="163.0" layoutY="102.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="7">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt8" layoutX="215.0" layoutY="102.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="8">
+      <Button fx:id="bt7" layoutX="215.0" layoutY="102.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="8">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt9" layoutX="59.0" layoutY="154.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="9">
+      <Button fx:id="bt8" layoutX="59.0" layoutY="154.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="9">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt10" layoutX="111.0" layoutY="154.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="10">
+      <Button fx:id="bt9" layoutX="111.0" layoutY="154.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="10">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt11" layoutX="163.0" layoutY="154.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="11">
+      <Button fx:id="bt10" layoutX="163.0" layoutY="154.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="11">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt12" layoutX="215.0" layoutY="154.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="12">
+      <Button fx:id="bt11" layoutX="215.0" layoutY="154.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="12">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt13" layoutX="59.0" layoutY="206.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="13">
+      <Button fx:id="bt12" layoutX="59.0" layoutY="206.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="13">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt14" layoutX="111.0" layoutY="206.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="14">
+      <Button fx:id="bt13" layoutX="111.0" layoutY="206.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="14">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt15" layoutX="163.0" layoutY="206.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="15">
+      <Button fx:id="bt14" layoutX="163.0" layoutY="206.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0" text="15">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="bt0" layoutX="215.0" layoutY="206.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0">
+      <Button fx:id="bt15" layoutX="215.0" layoutY="206.0" mnemonicParsing="false" onAction="#numButton" prefHeight="52.0" prefWidth="52.0">
          <font>
             <Font size="18.0" />
          </font>

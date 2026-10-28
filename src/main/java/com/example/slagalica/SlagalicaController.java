@@ -3,15 +3,15 @@ package com.example.slagalica;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class SlagalicaController {
+    static int missesCount = 0;
+    static int movesCount = 0;
     @FXML
     private TextArea moves;
     @FXML
@@ -48,8 +48,6 @@ public class SlagalicaController {
     private Button bt14;
     @FXML
     private Button bt15;
-    Random random = new Random();
-    String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", ""};
     Button[] buttons1 = new Button[16];
     List<Button> buttons;
 
@@ -70,11 +68,49 @@ public class SlagalicaController {
             }
             gumb.setText(String.valueOf(i));
         }
+        missesCount=0;
+        movesCount=0;
+        moves.setText("0");
+        misses.setText("0");
+    }
+
+    private int findPosition(Button gumb) {
+        String id = gumb.getId();
+        String position = id.replace("bt", "");
+        return Integer.parseInt(position);
     }
 
     @FXML
     private void numButton(ActionEvent e){
-        Button gumb = (Button) e.getSourse();
+        Button clickedButton = (Button) e.getSource();
+        int idClicked = findPosition(clickedButton);
+        Button emptyButton = null;
+        for (Button b : buttons) {
+            if (b.getText().isEmpty()) {
+                emptyButton = b;
+                break;
+            }
+        }
+        int idEmpty = findPosition(emptyButton);
+        //pozicije su poznate, trazimo retkove i stupce za rijesenje problema
+        int rowClicked = idClicked / 4;
+        int rowEmpty = idEmpty / 4;
+        int columnClicked = idClicked % 4;
+        int columnEmpty = idEmpty % 4;
 
+        if (((idClicked + 1) == idEmpty && rowClicked == rowEmpty) ||
+        ((idClicked - 1) == idEmpty && rowClicked == rowEmpty) ||
+        ((idClicked + 4) == idEmpty && columnClicked == columnEmpty) ||
+        ((idClicked - 4) == idEmpty && columnClicked == columnEmpty))
+        {
+            emptyButton.setText(clickedButton.getText());
+            clickedButton.setText("");
+        }
+        else{
+            missesCount++;
+        }
+        movesCount++;
+        moves.setText(String.valueOf(movesCount));
+        misses.setText(String.valueOf(missesCount));
     }
 }
