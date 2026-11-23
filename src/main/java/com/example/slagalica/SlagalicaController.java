@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+
+
 public class SlagalicaController {
     static int missesCount = 0;
     static int movesCount = 0;
@@ -48,19 +50,65 @@ public class SlagalicaController {
     private Button bt14;
     @FXML
     private Button bt15;
-    Button[] buttons1 = new Button[16];
+    @FXML
+    private Button bt16;
+    @FXML
+    private Button bt17;
+    @FXML
+    private Button bt18;
+    @FXML
+    private Button bt19;
+    @FXML
+    private Button bt20;
+    @FXML
+    private Button bt21;
+    @FXML
+    private Button bt22;
+    @FXML
+    private Button bt23;
+    @FXML
+    private Button bt24;
+    @FXML
+    private Button bt25;
+    @FXML
+    private Button bt26;
+    @FXML
+    private Button bt27;
+    @FXML
+    private Button bt28;
+    @FXML
+    private Button bt29;
+    @FXML
+    private Button bt30;
+    @FXML
+    private Button bt31;
+    @FXML
+    private Button bt32;
+    @FXML
+    private Button bt33;
+    @FXML
+    private Button bt34;
+    @FXML
+    private Button bt35;
+
+
+
+
+    Button[] buttons1 = new Button[36];
     List<Button> buttons;
+    Button[] buttons2 = new Button[] {bt0, bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8, bt9, bt10, bt11, bt12, bt13, bt14, bt15, bt16, bt17, bt18, bt19, bt20, bt21, bt22, bt23, bt24, bt25, bt26, bt27, bt28, bt29, bt30, bt31, bt32, bt33, bt34, bt35 };
 
     @FXML
     public void initialize(){
-        buttons1 = new Button[] {bt0, bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8, bt9, bt10, bt11, bt12, bt13, bt14, bt15};
+        buttons1 = new Button[] {bt0, bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8, bt9, bt10, bt11, bt12, bt13, bt14, bt15, bt16, bt17, bt18, bt19, bt20, bt21, bt22, bt23, bt24, bt25, bt26, bt27, bt28, bt29, bt30, bt31, bt32, bt33, bt34, bt35 };
         buttons = Arrays.asList(buttons1);
+        buttons2 = new Button[] {bt0, bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8, bt9, bt10, bt11, bt12, bt13, bt14, bt15, bt16, bt17, bt18, bt19, bt20, bt21, bt22, bt23, bt24, bt25, bt26, bt27, bt28, bt29, bt30, bt31, bt32, bt33, bt34, bt35 };
     }
 
     @FXML
     private void restartButton(ActionEvent e){
         Collections.shuffle(buttons);
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 36; i++) {
             Button gumb = buttons.get(i);
             if (i==0){
                 gumb.setText("");
@@ -82,6 +130,10 @@ public class SlagalicaController {
 
     @FXML
     private void numButton(ActionEvent e){
+        // kako bi rjesenje bilo univerzalno moramo doci do broja redaka i stupaca
+        double buttonsQuantity = (double) (buttons.toArray().length);
+        int dimension = (int) Math.pow(buttonsQuantity, 0.5);
+        //trazimo poziciju kliknutog i poziciju praznog
         Button clickedButton = (Button) e.getSource();
         int idClicked = findPosition(clickedButton);
         Button emptyButton = null;
@@ -93,15 +145,15 @@ public class SlagalicaController {
         }
         int idEmpty = findPosition(emptyButton);
         //pozicije su poznate, trazimo retkove i stupce za rijesenje problema
-        int rowClicked = idClicked / 4;
-        int rowEmpty = idEmpty / 4;
-        int columnClicked = idClicked % 4;
-        int columnEmpty = idEmpty % 4;
+        int rowClicked = idClicked / dimension;
+        int rowEmpty = idEmpty / dimension;
+        int columnClicked = idClicked % dimension;
+        int columnEmpty = idEmpty % dimension;
 
         if (((idClicked + 1) == idEmpty && rowClicked == rowEmpty) ||
         ((idClicked - 1) == idEmpty && rowClicked == rowEmpty) ||
-        ((idClicked + 4) == idEmpty && columnClicked == columnEmpty) ||
-        ((idClicked - 4) == idEmpty && columnClicked == columnEmpty))
+        ((idClicked + dimension) == idEmpty && columnClicked == columnEmpty) ||
+        ((idClicked - dimension) == idEmpty && columnClicked == columnEmpty))
         {
             emptyButton.setText(clickedButton.getText());
             clickedButton.setText("");
@@ -112,5 +164,16 @@ public class SlagalicaController {
         movesCount++;
         moves.setText(String.valueOf(movesCount));
         misses.setText(String.valueOf(missesCount));
+        winCheck();
+    }
+
+    private void winCheck(){
+        for (int i = 0; i < buttons1.length-1; i++) {
+            String text = buttons1[i].getText();
+            if (!(text.equals(String.valueOf(i+1)))){
+                return;
+            }
+        }
+        System.out.println("YOU WON!");
     }
 }
